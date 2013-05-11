@@ -3,7 +3,6 @@ var SongQueue = Songs.extend({
 
   //check back if we're doing proper event listening in the right place
   initialize: function(){
-
     this.on('add',function() {
       if (this.length===1) {
         this.playFirst();
@@ -19,6 +18,10 @@ var SongQueue = Songs.extend({
 
     this.on('dequeue', function(song) {
       this.remove(song);
+    });
+
+    this.on('enqueue', function(song){
+      this.push(song);
     });
   },
 
