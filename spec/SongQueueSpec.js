@@ -74,7 +74,7 @@ describe('SongQueue', function() {
   });
 
   describe('playFirst', function() {
-    xit('plays the first song in the queue', function() {
+    it('plays the first song in the queue', function() {
       spyOn(Song.prototype, 'play').andCallThrough();
       var songQueue = new SongQueue(songData1);
       songQueue.playFirst();
